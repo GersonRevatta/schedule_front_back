@@ -37,8 +37,8 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 # gem 'pry-rails', :group => :development
-gem 'pry-rails', group: :development
-gem 'pry-byebug', group: :development
+gem "pry-rails", group: :development
+gem "pry-byebug", group: :development
 gem "rubocop", require: false
 gem "rack-cors"
 

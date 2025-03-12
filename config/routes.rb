@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  namespace :api, defaults: { format: [:json, :haml, :pdf, :raw] } do
+  namespace :api, defaults: { format: [ :json, :haml, :pdf, :raw ] } do
     namespace :v1 do
-      resource :schedules, only: [:create]
+      resource :schedules, only: [ :create ]
     end
   end
 end
