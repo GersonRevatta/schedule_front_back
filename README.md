@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### Version de ruby  3.3.6
 
-* Ruby version
+### Ejecutar las migraciones 
 
-* System dependencies
+````
 
-* Configuration
+rake db:create
+rake db:migrate
+````
 
-* Database creation
 
-* Database initialization
+### Ejecutar servidor 
 
-* How to run the test suite
+````
 
-* Services (job queues, cache servers, search engines, etc.)
+rails s 
+````
 
-* Deployment instructions
+### Ejecutar los specs 
 
-* ...
+````
+
+ rspec spec/*
+````
