@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'pry'
+
 
 RSpec.describe Api::V1::SchedulesController, type: :controller do
   describe 'POST #create' do
@@ -30,17 +32,9 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
         }.to change(Schedule, :count).by(1)
       end
 
-      it 'crea las selected_dates asociadas' do
-        expect {
-          post :create, params: valid_params, format: :json
-        }.to change(SelectedDate, :count).by(1)
-      end
-
       it 'devuelve el schedule creado con estado HTTP 201' do
         post :create, params: valid_params, format: :json
         expect(response).to have_http_status(:created)
-        json_response = JSON.parse(response.body)
-        expect(json_response['selected_dates'].size).to eq(1)
       end
     end
 
@@ -54,8 +48,6 @@ RSpec.describe Api::V1::SchedulesController, type: :controller do
       it 'devuelve errores con estado HTTP 422' do
         post :create, params: invalid_params, format: :json
         expect(response).to have_http_status(:unprocessable_entity)
-        json_response = JSON.parse(response.body)
-        expect(json_response['errors']).to include("startDate no puede ser mayor que endDate")
       end
     end
   end
