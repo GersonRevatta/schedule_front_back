@@ -10,5 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_12_175402) do
+  create_table "schedules", force: :cascade do |t|
+    t.datetime "startDate"
+    t.datetime "endDate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "selected_dates", force: :cascade do |t|
+    t.string "dateString"
+    t.datetime "date"
+    t.integer "numberDay"
+    t.string "hour"
+    t.integer "schedule_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["schedule_id"], name: "index_selected_dates_on_schedule_id"
+  end
+
+  add_foreign_key "selected_dates", "schedules"
 end

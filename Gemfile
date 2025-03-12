@@ -27,7 +27,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
-
+# config/initializers/cors.rb
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -36,6 +36,11 @@ gem "kamal", require: false
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
+# gem 'pry-rails', :group => :development
+gem 'pry-rails', group: :development
+gem 'pry-byebug', group: :development
+gem "rubocop", require: false
+gem "rack-cors"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
